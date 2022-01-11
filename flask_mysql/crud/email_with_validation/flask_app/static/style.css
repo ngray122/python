@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: lightpink;
+}
+
+.container {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.flash {
+    background-color: crimson;
+    
+}

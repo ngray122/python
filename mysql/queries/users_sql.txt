@@ -1,0 +1,38 @@
+
+Query: Create 3 new users-
+INSERT INTO users (first_name, last_name, email) VALUES ("Santa", "Claus", "sclaus@gmail.com");
+INSERT INTO users (first_name, last_name, email) VALUES ("Rudolf", "Reindeer", "hoofin7654@aol.com");
+INSERT INTO users (first_name, last_name, email) VALUES ("Grich", "Spotted", "bahumbug@gmail.com");
+
+
+
+Query: Retrieve all the users-
+SELECT * FROM users_schema.users;
+
+
+
+Query: Retrieve the first user using their email address-
+SELECT email FROM users WHERE email = 'sclaus@gmail.com';
+
+
+
+Query: Retrieve the last user using their id-
+SELECT id FROM users WHERE id = 3;
+
+
+Query: Change the user with id=3 so their last name is Pancakes-
+UPDATE users SET first_name = 'Pancakes' WHERE id = 3;
+
+
+
+Query: Delete the user with id=2 from the database
+DELETE FROM users WHERE id = 2;
+
+
+
+Query: Get all the users, sorted by their first name-
+SELECT first_name FROM users;
+
+
+BONUS Query: Get all the users, sorted by their first name in descending order-
+SELECT first_name FROM users ORDER BY first_name DESC;

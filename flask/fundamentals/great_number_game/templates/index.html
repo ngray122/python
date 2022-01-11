@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Game</title>
+
+</head>
+<body>
+    <h1>Welome to the Great Number game</h1>
+    <h2>I am thinking of a number between 1 and 100</h2>
+    <h3>Take a guess!</h3>
+    <form action="/guess" method='post'>
+        <label for="player_guess">Guess Here</label>
+        <input type="text" name="player_guess">
+        <input type="submit" value="player_guess">
+
+        {%if 'player_guess' in session: % }
+            {%if session['player_guess'] == session['random_number']:% }
+                <h3>You Guessed It!!</h3>
+                <a href="/reset">Play Again?</a>
+            {%elif session['player_guess'] > session['random_number']: %}
+                <h3>Your Guess was TOO HIGH</h3>
+            {%else: %}
+                <h3>Your Guess was TOO LOW</h3>
+
+        {%endif%}
+    
+    
+    </form>
+</body>
+</html>

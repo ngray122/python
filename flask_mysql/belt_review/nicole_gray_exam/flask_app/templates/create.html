@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+</head>
+
+<body>
+    <h1>Add New Painting</h1>
+    <br>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout">Logout</a>
+    <br>
+
+
+    {% with messages = get_flashed_messages() %}
+
+    {% if messages %}
+
+    {% for message in messages %}
+
+    <p>{{message}}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+
+
+    <form action="/create" method="POST">
+
+        <label for="name" name="name">Name:</label>
+        <input type="text" name="name">
+        <br>
+        <label for="description">Description:</label>
+        <textarea type="text" name="description"></textarea>
+        <br>
+        <label for="price">Price:</label>
+        <input type="number" name="price" min=1>
+
+
+        <input type="submit">
+
+
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Painting</title>
+</head>
+<body>
+    <h1>Edit Painting</h1>
+    <a href="/create/painting">Add New Painting</a>
+    <br>
+    <a href="/logout">Logout</a>
+    <br>
+    <a href="/dashboard">Dashboard</a>
+
+    {% with messages = get_flashed_messages() %}
+
+    {% if messages %}
+
+    {% for message in messages %}
+
+    <p>{{message}}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    
+
+
+    <form action='/edit/{{painting.id}}' method='POST'>
+
+        <label for="name" name="name">Name:</label>
+        <input type="text" name="name" value="{{painting.name}}">
+        <br>
+        <label for="description">Description:</label>
+        <textarea name="description">{{painting.description}}</textarea>
+        <br>
+        <label for="price" >Price:</label>
+        <input type="number" name="price"  min="1" value="{{painting.price}}">
+
+
+
+        <input type="submit">
+
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Painting</title>
+</head>
+
+<body>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout">Logout</a>
+    <a href="/create/painting">Add Painting</a>
+
+
+    
+    
+    <h1>{{ one_painting.name }}</h1>
+
+    <table>
+        <p>Painted by: {{session.first_name}} {{session.last_name}}</p>
+        <br>
+        <p>Description: {{one_painting.description}}</p>
+        <br>
+        <p>Price: {{one_painting.price}} </p>
+        <br>
+
+    </table>
+   
+</body>
+
+</html>

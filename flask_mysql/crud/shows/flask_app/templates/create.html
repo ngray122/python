@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Show</title>
+</head>
+
+<body>
+    <h1>Create a New Show</h1>
+    <br>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout">Logout</a>
+    <br>
+
+
+    {% with messages = get_flashed_messages() %}
+
+    {% if messages %}
+
+    {% for message in messages %}
+
+    <p>{{message}}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+
+
+    <form action="/create" method="POST">
+
+        <label for="name" name="name">Name:</label>
+        <input type="text" name="name">
+        <br>
+        <label for="description">Description:</label>
+        <textarea type="text" name="description"></textarea>
+        <br>
+        <br>
+        <label for="date">Date Made On:</label>
+        <input type="date" name="date">
+        <br>
+        <!-- <p>Under 30 mins?</p>
+        <input type="radio" name="under_30" value="yes" required>
+        <label for="yes">Yes</label>
+        <input type="radio" name="under_30" value="no" required>
+        <label for="no">No</label> -->
+
+
+
+        <input type="submit">
+
+
+    </form>
+</body>
+
+</html>

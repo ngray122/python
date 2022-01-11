@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shows</title>
+</head>
+<body>
+    <h1>Welcome to the Dashboard {{session.first_name}}!</h1>
+    <h2>Here are the shows in your area! <a href="/create/show">Make a new show!</a>
+    </h2>
+
+    <table>
+        {% for single_show in shows %}
+        <p>Show Name: {{single_show.name }} </p>
+        <p>Date: {{single_show.date}} </p>
+        <p>Actions: 
+
+            {%if single_show.user_id == session['user_id'] %}
+            <a href="/edit/{{single_show.id}}">edit</a>
+            <a href="/delete/{{single_show.id}}">delete</a>
+            {%endif%}
+            <a href="/show/{{single_show.id}}">view</a>
+        </p>
+        <br>
+        <br>
+
+        {%endfor%}
+
+
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+
+
+Query: Create 3 new dojos- 
+INSERT INTO dojos (name) VALUES ("Online");
+INSERT INTO dojos (name) VALUES ("Space");
+INSERT INTO dojos (name) VALUES ("Underwater");
+
+
+Query: Delete the 3 dojos you just created
+DELETE FROM dojos WHERE id = 1;
+DELETE FROM dojos WHERE id = 2;
+DELETE FROM dojos WHERE id = 3;
+
+
+Query: Create 3 more dojos-
+INSERT INTO dojos (name) VALUES ("Beginner");
+INSERT INTO dojos (name) VALUES ("Advanced");
+INSERT INTO dojos (name) VALUES ("Sensei");
+
+
+Query: Create 3 ninjas that belong to the first dojo-
+SELECT * FROM ninjas JOIN dojos ON dojos.id = dojo_id;
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Addison", "Gloopy", 15, 4);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("George", "Gruoper", 88, 4);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Nicole", "Gray", 35, 4);
+
+
+Query: Create 3 ninjas that belong to the second dojo-
+SELECT * FROM ninjas JOIN dojos ON dojos.id = dojo_id;
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Jonny", "Bokket", 35, 5);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Mary", "Square", 65, 5);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Mike", "Shrimp", 45, 5);
+
+
+Query: Create 3 ninjas that belong to the third dojo-
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Bobert", "Applebee", 36, 6);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Jim", "Johnson", 4, 6);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Alice", "Smith", 80, 6);
+
+Query: Retrieve all the ninjas from the first dojo-
+SELECT * FROM ninjas JOIN dojos ON dojos.id = dojo_id;
+SELECT * FROM ninjas WHERE dojo_id= 4;
+
+Query: Retrieve all the ninjas from the last dojo
+SELECT * FROM ninjas JOIN dojos ON dojos.id = dojo_id ORDER BY dojo_id DESC LIMIT 1; 
+
+Query: Retrieve the last ninja's dojo-
+SELECT * FROM ninjas JOIN dojos ON dojos.id = dojo_id
+ORDER BY ninjas.id DESC LIMIT 1;
+
+
+Submit your .txt file that contains all the queries you ran in the shell

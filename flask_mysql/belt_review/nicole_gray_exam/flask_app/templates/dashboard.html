@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <a href="/logout">Logout</a>
+    <br>
+    <a href="/create/painting">Add Painting</a>
+    <br>
+    <br>
+    <h1>Welcome {{session.first_name}} {{session.last_name}}!</h1>
+    <h2>Paintings</h2>
+
+    <table>
+        {% for single_painting in paintings %}
+        <p><a href="/edit/{{single_painting.id}}/painting">
+
+                <div>
+                    <p><a href="/show/{{single_painting.id}}">{{single_painting.name}}</a> by
+                        {{single_painting.user.first_name}} {{single_painting.user.last_name}}</p>
+                        {%if single_painting.user.id == session['user_id'] %}
+                    <p> <a href="/edit/{{single_painting.id}}/painting">Edit painting</a>
+                        <a href="/delete/{{single_painting.id}}">Delete Painting</a>
+                    </p>
+                        {%endif%}
+                </div>
+
+                {%endfor%}
+
+
+    </table>
+    {% with messages = get_flashed_messages() %}     
+    {% if messages %}                           
+    {% for message in messages %}           
+    <p>{{message}}</p>                
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+</body>
+
+</html>
